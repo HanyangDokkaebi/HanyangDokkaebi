@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -231,7 +232,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -257,11 +258,27 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccf59e8daf928e14ba8387c58a00786d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1171747195}
+  speed: 1
+  center: {x: 0, y: 2.5}
+  size: {x: 20, y: 15}
 --- !u!1 &748554245
 GameObject:
   m_ObjectHideFlags: 0
@@ -1996,6 +2013,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &1171747195 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5862692570419010124, guid: e33dde6cc968d3b4b80c7d7b7f6ff499, type: 3}
+  m_PrefabInstance: {fileID: 4502579771709840417}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1493197815
 GameObject:
   m_ObjectHideFlags: 0
