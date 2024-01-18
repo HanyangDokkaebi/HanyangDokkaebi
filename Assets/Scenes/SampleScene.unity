@@ -2330,18 +2330,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6739764327817290690, guid: e33dde6cc968d3b4b80c7d7b7f6ff499, type: 3}
-      propertyPath: jumpForce
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8277255456299757035, guid: e33dde6cc968d3b4b80c7d7b7f6ff499, type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8277255456299757035, guid: e33dde6cc968d3b4b80c7d7b7f6ff499, type: 3}
-      propertyPath: m_GravityScale
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8971252201495494333, guid: e33dde6cc968d3b4b80c7d7b7f6ff499, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2526,6 +2514,42 @@ PrefabInstance:
     - target: {fileID: 1693978269635118146, guid: cbf3d20dc5ddf864ca99f80dd2504d6e, type: 3}
       propertyPath: m_Name
       value: Vampire
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580165879400403214, guid: cbf3d20dc5ddf864ca99f80dd2504d6e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580165879400403214, guid: cbf3d20dc5ddf864ca99f80dd2504d6e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2580165879400403214, guid: cbf3d20dc5ddf864ca99f80dd2504d6e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.21960786
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948723233789370829, guid: cbf3d20dc5ddf864ca99f80dd2504d6e, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948723233789370829, guid: cbf3d20dc5ddf864ca99f80dd2504d6e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2948723233789370829, guid: cbf3d20dc5ddf864ca99f80dd2504d6e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305828775647173739, guid: cbf3d20dc5ddf864ca99f80dd2504d6e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 76175f103bc2cf54295b5894c2607319, type: 2}
+    - target: {fileID: 7808846973209130715, guid: cbf3d20dc5ddf864ca99f80dd2504d6e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.73471075
+      objectReference: {fileID: 0}
+    - target: {fileID: 7808846973209130715, guid: cbf3d20dc5ddf864ca99f80dd2504d6e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.43264464
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
