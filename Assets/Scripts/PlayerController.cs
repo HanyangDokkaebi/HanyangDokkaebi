@@ -23,6 +23,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moveDirection = Input.GetAxisRaw("Horizontal");
+        if(moveDirection == 0)
+        {
+            m_Animator.SetBool("IsMoving", false);      
+        }
+        if(moveDirection != 0)
+        {
+            m_Animator.SetBool("IsMoving", true);
+        }
         Move();
         FlipDirection();
 
@@ -31,7 +39,18 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
+            m_Animator.SetBool("IsJumping", true);
             Jump();
+        }
+        else
+        {
+            m_Animator.SetBool("IsJumping", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            m_Animator.SetTrigger("Attack");
+            Attack();
         }
     }
 
@@ -55,5 +74,10 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x, jumpForce);
+    }
+
+    private void Attack()
+    {
+        Debug.Log("Attack!");
     }
 }
