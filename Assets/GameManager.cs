@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject Inventory;
-
+    public GameObject CurrentQuest;
+    public static int QuestNumber = 0;
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +31,19 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 Inventory.SetActive(true);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (CurrentQuest.activeSelf)
+            {
+                Time.timeScale = 1f;
+                CurrentQuest.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0f;
+                CurrentQuest.SetActive(true);
             }
         }
     }
