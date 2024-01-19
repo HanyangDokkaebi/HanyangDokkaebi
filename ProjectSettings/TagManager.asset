@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Monster
   - Wall
+  - Item
+  - "\uC8FC\uB9C9\uC8FC\uC778"
   layers:
   - Default
   - TransparentFX
