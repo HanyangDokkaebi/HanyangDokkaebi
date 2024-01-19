@@ -8,10 +8,12 @@ public class MonsterMovement : MonoBehaviour
     public float speed;
     private Rigidbody2D m_Rigidbody;
     private float moveDirection = -1;
+    private Animator m_Animator;
 
     private void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
+        m_Animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -21,6 +23,7 @@ public class MonsterMovement : MonoBehaviour
 
     private void Move()
     {
+        m_Animator.SetBool("IsMoving", true);
         m_Rigidbody.velocity = new Vector2(moveDirection * speed, m_Rigidbody.velocity.y);
     }
 
