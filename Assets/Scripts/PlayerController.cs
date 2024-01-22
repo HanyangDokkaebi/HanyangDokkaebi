@@ -2,82 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : LivingEntity
 {
-    public float speed;
-    public float jumpForce;
-    private float moveDirection;
-    private bool isGrounded;
-    private Animator m_Animator;
-    private Rigidbody2D m_Rigidbody;
-    public Transform groundCheck; // 발 쪽 콜라이더 위치
-    public float groundCheckRadius;
-    public LayerMask groundLayer;
+    private Animator playerAnimator;
+    private PlayerMovement playerMovement;
 
-    private void Awake()
+    void Awake()
     {
-        m_Animator = GetComponent<Animator>();
-        m_Rigidbody = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     void Update()
     {
-        moveDirection = Input.GetAxisRaw("Horizontal");
-        if(moveDirection == 0)
-        {
-            m_Animator.SetBool("IsMoving", false);      
-        }
-        if(moveDirection != 0)
-        {
-            m_Animator.SetBool("IsMoving", true);
-        }
-        Move();
-        FlipDirection();
-
-        // 땅에 있는지 체크
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            m_Animator.SetBool("IsJumping", true);
-            Jump();
-        }
-        else
-        {
-            m_Animator.SetBool("IsJumping", false);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            m_Animator.SetTrigger("Attack");
-            Attack();
-        }
+        
     }
 
-    private void Move()
+    protected override void OnEnable()
     {
-        m_Rigidbody.velocity = new Vector2(moveDirection * speed, m_Rigidbody.velocity.y);
+        base.OnEnable();
+
+        playerMovement.enabled = true;
     }
 
-    private void FlipDirection()
+    public override void OnDamage(float damage)
     {
-        if (moveDirection > 0)
-        {
-            transform.localScale = new Vector3(-2, 2, 2); // 오른쪽 바라보기
-        }
-        else if (moveDirection < 0)
-        {
-            transform.localScale = new Vector3(2, 2, 2); // 왼쪽 바라보기
-        }
+        base.OnDamage(damage);
     }
 
-    private void Jump()
+    public override void Die()
     {
-        m_Rigidbody.velocity = new Vector2(m_Rigidbody.velocity.x, jumpForce);
-    }
-
-    private void Attack()
-    {
-        Debug.Log("Attack!");
+        base.Die();
+        
+        playerMovement.enabled = false;
     }
 }
