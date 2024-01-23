@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : PlayerController {
+    //플레이어 이동 관련 변수
     public float speed;
     public float jumpForce;
     private float moveDirection;
-    private bool isGrounded;
+
+    //플레이어에 붙어있는 컴포넌트들
     private Animator m_Animator;
     private Rigidbody2D m_Rigidbody;
-    public Transform groundCheck; // 발 쪽 콜라이더 위치
+
+    //점프 시 땅에 붙어있는지 판정
+    private bool isGrounded;
+    public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
+
+    //공격을 위한 피격범위
+    public Transform pos;
+    public Vector2 boxSize;
 
     private void Awake()
     {
@@ -39,23 +47,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            m_Animator.SetBool("IsJumping", true);
             Jump();
-        }
-        else
-        {
-            m_Animator.SetBool("IsJumping", false);
         }
 
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            m_Animator.SetTrigger("Attack_Sword");
             AttackSword();
         }
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            m_Animator.SetTrigger("Attack_Bow");
             AttackBow();
         }
     }
@@ -84,11 +85,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void AttackSword()
     {
+        m_Animator.SetTrigger("Attack_Sword");
         Debug.Log("AttackSword!");
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
+        foreach (Collider2D collider in collider2Ds)
+        {
+            //Debug.Log(collider.tag);
+            if(collider.tag == "Monster")
+            {
+                collider.GetComponent<MonsterMovement>().OnDamage(atk);
+            }
+        }
     }
 
     private void AttackBow()
     {
+        m_Animator.SetTrigger("Attack_Bow");
         Debug.Log("AttackBow!");
+    }
+
+    //Debug: 공격범위 시각화
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(pos.position, boxSize);
     }
 }
