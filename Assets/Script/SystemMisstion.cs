@@ -10,8 +10,10 @@ public class SystemMisstion : MonoBehaviour
     private string[] Missionlines =
     {
         //1
-        "퀘스트\n-------------\n주막주인을 찾아가시오."
+        "퀘스트\n-------------\n주막주인을 찾아가시오.",
 
+        //2
+        
 
     };
 
