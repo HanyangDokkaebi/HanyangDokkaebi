@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using static UnityEditor.PlayerSettings;
@@ -7,41 +8,62 @@ using static UnityEditor.PlayerSettings;
 public class MonsterMovement : MonsterController
 {
     //컴포넌트들
-    private Rigidbody2D m_Rigidbody;
-    private Animator m_Animator;
+    private Rigidbody2D monsterRigidbody;
+    private Animator monsterAnimator;
     //몬스터 이동 세팅
     public float speed;
     private float moveDirection = -1;
-    //공격을 위한 피격볌위
+    //공격을 위한 피격범위
     public Transform pos;
     public Vector2 boxSize;
     //공격 쿨타임 조정
-    private float curTime;
-    public float cooldown = 0.5f;
+    private float curTime = 0;
+    public float cooldown = 2.0f;
+    //몬스터 상태
+    private bool isAttacking = false;
+
     private void Awake()
     {
-        m_Rigidbody = GetComponent<Rigidbody2D>();
-        m_Animator = GetComponent<Animator>();
+        monsterRigidbody = GetComponent<Rigidbody2D>();
+        monsterAnimator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
         if (!isDead)
         {
-            Move();
-            Attack();
+            foreach (Collider2D collider in collider2Ds)
+            {
+                if (collider.tag == "Player")   //공격범위에 플레이어가 존재할 경우
+                {
+                    if (curTime <= 0)   //쿨타임이 다 돌면
+                    {
+                        Attack(collider);
+                        curTime = cooldown; //쿨타임 다시 돌리기
+                    }
+                    else
+                    {
+                        curTime -= Time.deltaTime;
+                    }
+                }
+            }
+            if (!isAttacking)
+            {
+                Move();
+            }
         }
         else
         {
-            m_Animator.SetTrigger("Die");
+            monsterAnimator.SetTrigger("Die");
             Destroy(gameObject, 2.0f);
         }
     }
 
     private void Move()
     {
-        m_Animator.SetBool("IsMoving", true);
-        m_Rigidbody.velocity = new Vector2(moveDirection * speed, m_Rigidbody.velocity.y);
+        monsterAnimator.SetBool("IsMoving", true);
+        monsterRigidbody.velocity = new Vector2(moveDirection * speed, monsterRigidbody.velocity.y);
     }
 
     //벽에 닿으면 방향 전환
@@ -68,19 +90,19 @@ public class MonsterMovement : MonsterController
         }
     }
 
-    private void Attack()
+    private void Attack(Collider2D collider)
     {
-        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(pos.position, boxSize, 0);
-        foreach (Collider2D collider in collider2Ds)
-        {
-            //Debug.Log(collider.tag);
-            if (collider.tag == "Player")
-            {
-                m_Animator.SetTrigger("Attack");
-                Debug.Log("MonsterAttack!");
-                collider.GetComponent<PlayerMovement>().OnDamage(atk);
-            }
-        }
+        isAttacking = true;
+        monsterRigidbody.velocity = new Vector2(0, 0);  //공격할 땐 멈춰서
+        monsterAnimator.SetTrigger("Attack");
+        Debug.Log("MonsterAttack!");
+        collider.GetComponent<PlayerMovement>().OnDamage(atk);
+    }
+
+    public void ResetAttack()
+    {
+        isAttacking = false;
+        Debug.Log("ResetAttack");
     }
 
     //Debug: 공격범위 시각화

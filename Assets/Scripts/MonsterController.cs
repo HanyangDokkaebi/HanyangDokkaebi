@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MonsterController : LivingEntity
 {
-    /*private Animator m_Animator;
+    /*private Animator monsterAnimator;
     private MonsterMovement m_Movement;*/
     
     void Awake()
     {
-        /* m_Animator = GetComponent<Animator>();
+        /* monsterAnimator = GetComponent<Animator>();
          m_Movement = GetComponent<MonsterMovement>();*/
         maxHp = 50f;
         atk = 5f;

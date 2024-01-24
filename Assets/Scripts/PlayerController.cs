@@ -26,12 +26,13 @@ public class PlayerController : LivingEntity
     public override void OnDamage(float damage)
     {
         base.OnDamage(damage);
+        Debug.Log("Player HP: " + hp);
     }
 
     public override void Die()
     {
         base.Die();
-        
+        Debug.Log("Player Dead!");
         playerMovement.enabled = false;
     }
 }
