@@ -6,11 +6,13 @@ public class MonsterController : LivingEntity
 {
     /*private Animator m_Animator;
     private MonsterMovement m_Movement;*/
-
+    
     void Awake()
     {
-       /* m_Animator = GetComponent<Animator>();
-        m_Movement = GetComponent<MonsterMovement>();*/
+        /* m_Animator = GetComponent<Animator>();
+         m_Movement = GetComponent<MonsterMovement>();*/
+        maxHp = 50f;
+        atk = 5f;
     }
 
     protected override void OnEnable()
