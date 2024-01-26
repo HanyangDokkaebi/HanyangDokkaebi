@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour
 {
     public GameObject Inventory;
     public GameObject CurrentQuest;
-    public static int QuestNumber = 0;
     // Update is called once per frame
     void Update()
     {

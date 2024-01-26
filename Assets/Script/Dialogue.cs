@@ -10,7 +10,6 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
     public AudioSource s;
     public static int index = 0;
-    public GameObject SelectImage;
     public GameObject button;
 
 
@@ -96,7 +95,7 @@ public class Dialogue : MonoBehaviour
         "알겠소.",
 
         //23
-        "(기계부품이라… 지금은 쓰지 않는 선로에 가면 찾을 수 있겠지.)",
+        "(기계부품이라… 지금은 쓰지 않는 선로에 가면 찾을 수 있겠지.)"
 
 
 
