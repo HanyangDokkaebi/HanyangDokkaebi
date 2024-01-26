@@ -10,7 +10,6 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
     public AudioSource s;
     public static int index = 0;
-    public GameObject SelectImage;
     public GameObject button;
 
 

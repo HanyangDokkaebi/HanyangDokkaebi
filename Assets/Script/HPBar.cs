@@ -13,8 +13,8 @@ public class HPBar : MonoBehaviour
 
     public static float MaxHp = 100;
     public static float MaxMana = 100;
-    public static float HP = 0;
-    public static float Mana = 0;
+    public static float HP = 50;
+    public static float Mana = 50;
 
     void Start()
     {
