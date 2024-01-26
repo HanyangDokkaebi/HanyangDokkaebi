@@ -257,12 +257,13 @@ GameObject:
   - component: {fileID: 2946962836115719782}
   - component: {fileID: 2758867810097391671}
   - component: {fileID: 6739764327817290690}
+  - component: {fileID: 4258388328811851792}
   - component: {fileID: 8277255456299757035}
   - component: {fileID: 6045901574858121559}
   - component: {fileID: 5663214938568000450}
   m_Layer: 0
   m_Name: UnitRoot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,6 +282,8 @@ Transform:
   m_Children:
   - {fileID: 6690472214233768315}
   - {fileID: 8879142936862558515}
+  - {fileID: 8349878310310536585}
+  - {fileID: 8749250461773399229}
   m_Father: {fileID: 8971252201495494333}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -329,6 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6618741c4de6e1e4f96b53886e2b4fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 100
+  def: 0
   speed: 5
   jumpForce: 15
   groundCheck: {fileID: 8879142936862558515}
@@ -336,6 +341,28 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  arrow: {fileID: 9021458091098054583, guid: dc950749069bc464b842107266ed363b, type: 3}
+  arrowPos: {fileID: 8749250461773399229}
+  pos: {fileID: 8349878310310536585}
+  boxSize: {x: 1, y: 1}
+  cooldownSword: 0.5
+  cooldownBow: 0.5
+  arrowSpeed: 10
+  arrowLifetime: 0.5
+--- !u!114 &4258388328811851792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895955770804119165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e76a7c234a1d74cb8f5fd1cb0c20a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 100
+  def: 0
 --- !u!50 &8277255456299757035
 Rigidbody2D:
   serializedVersion: 4
@@ -3475,6 +3502,37 @@ Transform:
   m_Father: {fileID: 1568278904696060330}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30}
+--- !u!1 &8074705792271641652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8349878310310536585}
+  m_Layer: 0
+  m_Name: melee
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8349878310310536585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8074705792271641652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.588, y: 0.392, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5862692570419010124}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8234417152190496673
 GameObject:
   m_ObjectHideFlags: 0
@@ -3876,6 +3934,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8889917796195114454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8749250461773399229}
+  m_Layer: 0
+  m_Name: ArrowSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8749250461773399229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8889917796195114454}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.336, y: 0.402, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5862692570419010124}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8891333565423389408
 GameObject:
   m_ObjectHideFlags: 0
