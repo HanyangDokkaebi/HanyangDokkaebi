@@ -7,19 +7,19 @@ using static UnityEditor.PlayerSettings;
 
 public class MonsterMovement : MonsterController
 {
-    //ÄÄÆ÷³ÍÆ®µé
+    //ì»´í¬ë„ŒíŠ¸ë“¤
     private Rigidbody2D monsterRigidbody;
     private Animator monsterAnimator;
-    //¸ó½ºÅÍ ÀÌµ¿ ¼¼ÆÃ
+    //ëª¬ìŠ¤í„° ì´ë™ ì„¸íŒ…
     public float speed;
     private float moveDirection = -1;
-    //°ø°İÀ» À§ÇÑ ÇÇ°İ¹üÀ§
+    //ê³µê²©ì„ ìœ„í•œ í”¼ê²©ë²”ìœ„
     public Transform pos;
     public Vector2 boxSize;
-    //°ø°İ ÄğÅ¸ÀÓ Á¶Á¤
+    //ê³µê²© ì¿¨íƒ€ì„ ì¡°ì •
     private float curTime = 0;
     public float cooldown = 2.0f;
-    //¸ó½ºÅÍ »óÅÂ
+    //ëª¬ìŠ¤í„° ìƒíƒœ
     private bool isAttacking = false;
 
     private void Awake()
@@ -35,12 +35,12 @@ public class MonsterMovement : MonsterController
         {
             foreach (Collider2D collider in collider2Ds)
             {
-                if (collider.tag == "Player" /* && Gamemanager.isGameOver == false */)   //°ø°İ¹üÀ§¿¡ ÇÃ·¹ÀÌ¾î°¡ Á¸ÀçÇÒ °æ¿ì
+                if (collider.tag == "Player" /* && Gamemanager.isGameOver == false */)   //ê³µê²©ë²”ìœ„ì— í”Œë ˆì´ì–´ê°€ ì¡´ì¬í•  ê²½ìš°
                 {
-                    if (curTime <= 0)   //ÄğÅ¸ÀÓÀÌ ´Ù µ¹¸é
+                    if (curTime <= 0)   //ì¿¨íƒ€ì„ì´ ë‹¤ ëŒë©´
                     {
                         Attack(collider);
-                        curTime = cooldown; //ÄğÅ¸ÀÓ ´Ù½Ã µ¹¸®±â
+                        curTime = cooldown; //ì¿¨íƒ€ì„ ë‹¤ì‹œ ëŒë¦¬ê¸°
                     }
                     else
                     {
@@ -66,7 +66,7 @@ public class MonsterMovement : MonsterController
         monsterRigidbody.velocity = new Vector2(moveDirection * speed, monsterRigidbody.velocity.y);
     }
 
-    //º®¿¡ ´êÀ¸¸é ¹æÇâ ÀüÈ¯
+    //ë²½ì— ë‹¿ìœ¼ë©´ ë°©í–¥ ì „í™˜
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Wall")
@@ -77,23 +77,23 @@ public class MonsterMovement : MonsterController
         }
     }
 
-    //¹æÇâ ÀüÈ¯
+    //ë°©í–¥ ì „í™˜
     private void FlipDirection()
     {
         if (moveDirection > 0)
         {
-            transform.localScale = new Vector3(-2, 2, 2); // ¿À¸¥ÂÊ ¹Ù¶óº¸±â
+            transform.localScale = new Vector3(-2, 2, 2); // ì˜¤ë¥¸ìª½ ë°”ë¼ë³´ê¸°
         }
         else if (moveDirection < 0)
         {
-            transform.localScale = new Vector3(2, 2, 2); // ¿ŞÂÊ ¹Ù¶óº¸±â
+            transform.localScale = new Vector3(2, 2, 2); // ì™¼ìª½ ë°”ë¼ë³´ê¸°
         }
     }
 
     private void Attack(Collider2D collider)
     {
         isAttacking = true;
-        monsterRigidbody.velocity = new Vector2(0, 0);  //°ø°İÇÒ ¶© ¸ØÃç¼­
+        monsterRigidbody.velocity = new Vector2(0, 0);  //ê³µê²©í•  ë• ë©ˆì¶°ì„œ
         monsterAnimator.SetTrigger("Attack");
         Debug.Log("MonsterAttack!");
         collider.GetComponent<PlayerMovement>().OnDamage(atk);
@@ -105,7 +105,7 @@ public class MonsterMovement : MonsterController
         Debug.Log("ResetAttack");
     }
 
-    //Debug: °ø°İ¹üÀ§ ½Ã°¢È­
+    //Debug: ê³µê²©ë²”ìœ„ ì‹œê°í™”
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
