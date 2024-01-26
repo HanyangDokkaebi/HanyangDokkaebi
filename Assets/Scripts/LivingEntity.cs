@@ -6,7 +6,7 @@ using UnityEngine;
 public class LivingEntity : MonoBehaviour
 {
     public float maxHp = 100f;
-    public float atk = 10f;
+    public static float atk = 10f;
     public float def = 0f;
     public float hp { get; protected set; }
     public bool isDead { get; protected set; }

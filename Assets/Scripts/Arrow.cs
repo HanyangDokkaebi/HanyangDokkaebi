@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Arrow : SpawnArrow
+public class Arrow : MonoBehaviour
 {
-    public float speed = 10f;
-    private Rigidbody2D m_arrowRigidbody;
-
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        m_arrowRigidbody = GetComponent<Rigidbody2D>();
-        m_arrowRigidbody.velocity = Vector2.left * speed;
-
-        Destroy(gameObject, 0.3f);
+        if (collision.tag == "Monster")
+        {
+            Debug.Log("Arrow hit!");
+            collision.GetComponent<MonsterMovement>().OnDamage(LivingEntity.atk * 0.5f);
+            Destroy(gameObject);
+        }
     }
 }

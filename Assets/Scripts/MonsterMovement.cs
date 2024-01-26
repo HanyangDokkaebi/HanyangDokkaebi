@@ -35,7 +35,7 @@ public class MonsterMovement : MonsterController
         {
             foreach (Collider2D collider in collider2Ds)
             {
-                if (collider.tag == "Player")   //공격범위에 플레이어가 존재할 경우
+                if (collider.tag == "Player" /* && Gamemanager.isGameOver == false */)   //공격범위에 플레이어가 존재할 경우
                 {
                     if (curTime <= 0)   //쿨타임이 다 돌면
                     {

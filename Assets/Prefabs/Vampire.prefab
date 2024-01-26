@@ -2346,7 +2346,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
-  atk: 10
   def: 0
   speed: 1
   pos: {fileID: 0}

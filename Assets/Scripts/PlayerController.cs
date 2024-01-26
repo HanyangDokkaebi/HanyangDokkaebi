@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class PlayerController : LivingEntity
 {
-    private Animator playerAnimator;
-    private PlayerMovement playerMovement;
-
     void Awake()
     {
-        playerAnimator = GetComponent<Animator>();
-        playerMovement = GetComponent<PlayerMovement>();
+
     }
 
     void Update()
@@ -33,6 +29,5 @@ public class PlayerController : LivingEntity
     {
         base.Die();
         Debug.Log("Player Dead!");
-        playerMovement.enabled = false;
     }
 }
