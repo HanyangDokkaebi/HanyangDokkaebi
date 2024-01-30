@@ -1487,11 +1487,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3074236960729941455, guid: 05f484992026a8b4fb312fa5452c2f84, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 25.28
+      value: 20.45
       objectReference: {fileID: 0}
     - target: {fileID: 3074236960729941455, guid: 05f484992026a8b4fb312fa5452c2f84, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 13.1
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3074236960729941455, guid: 05f484992026a8b4fb312fa5452c2f84, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1511,7 +1511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3970711615204197902, guid: 05f484992026a8b4fb312fa5452c2f84, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5421174474376875493, guid: 05f484992026a8b4fb312fa5452c2f84, type: 3}
       propertyPath: m_LocalScale.x
@@ -13228,7 +13228,6 @@ MonoBehaviour:
   textComponent: {fileID: 964879431}
   textSpeed: 0.08
   s: {fileID: 208009381}
-  SelectImage: {fileID: 0}
   button: {fileID: 1834158699}
 --- !u!1 &1971396834
 GameObject:
