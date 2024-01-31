@@ -115,10 +115,17 @@ public class Dialogue : MonoBehaviour
     {
     }
 
-    int[] B_index = new int[14] {4,7,9,15,20,25,29,33,37,41,42,44,48,51}; //대화집을 끝낼 타이밍
+    int[] B_index = new int[3] {1,10, 23}; //대화집을 끝낼 타이밍
+    int[] Mission_index = new int[3] { 1, 10, 23 };
     int a = 0;
     public void Nextdialog()
     {
+        if (a == 1)
+        {
+            //인덱스 설정
+            index++;
+            gameObject.SetActive(false); //꺼버려 일단
+        }
         s.Stop();
         if (textComponent.text == lines[index])
         {
@@ -126,19 +133,24 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            
-            a = 0;
-            for (int i = 0; i < 14; i++)
-                if (B_index[i] == index) //대화집을 끝낼 타이밍이라면
-                    a = 1;
-            if (a == 1)
+            for (int i = 0; i<3; i++)
             {
-                //인덱스 설정
-                gameObject.SetActive(false); //꺼버려 일단
+                if (Mission_index[i] == index)
+                {
+                    SystemMisstion.QuestNumber++;
+                }
             }
+            a = 0;
+            for (int i = 0; i < 3; i++)
+                if (B_index[i] == index)
+                {  //대화집을 끝낼 타이밍이라면
+                    a = 1;
+                    break;
+                }
             
             StopAllCoroutines();
             textComponent.text = lines[index];
+
         }
 
     }

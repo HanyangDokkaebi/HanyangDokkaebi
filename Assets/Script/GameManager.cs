@@ -6,7 +6,29 @@ public class GameManager : MonoBehaviour
 {
     public GameObject Inventory;
     public GameObject CurrentQuest;
+    public GameObject Store;
     // Update is called once per frame
+    public void StoreOff()
+    {
+        Store.SetActive(false);
+    }
+    public void HPpotionUp()
+    {
+        if (ItemManager.Money >= 1000)
+        {
+            ItemManager.Money -= 1000;
+            ItemManager.HPPotion += 1;
+        }
+    }
+    public void ManapotionUp()
+    {
+        if (ItemManager.Money >= 500 && ItemManager.Energy >= 3)
+        {
+            ItemManager.Money -= 500;
+            ItemManager.Energy -= 3;
+            ItemManager.ManaPotion += 1;
+        }
+    }
     public void inventoryOn()
     {
         if (Inventory.activeSelf)
