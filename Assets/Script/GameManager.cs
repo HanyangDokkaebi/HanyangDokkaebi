@@ -7,6 +7,19 @@ public class GameManager : MonoBehaviour
     public GameObject Inventory;
     public GameObject CurrentQuest;
     // Update is called once per frame
+    public void inventoryOn()
+    {
+        if (Inventory.activeSelf)
+        {
+            Time.timeScale = 1f;
+            Inventory.SetActive(false);
+        }
+        else
+        {
+            Time.timeScale = 0f;
+            Inventory.SetActive(true);
+        }
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1) && ItemManager.HPPotion != 0 && HPBar.HP != HPBar.MaxHp)
@@ -21,16 +34,7 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if (Inventory.activeSelf)
-            {
-                Time.timeScale = 1f;
-                Inventory.SetActive(false);
-            }
-            else
-            {
-                Time.timeScale = 0f;
-                Inventory.SetActive(true);
-            }
+            inventoryOn();
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
