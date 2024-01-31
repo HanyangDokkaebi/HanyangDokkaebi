@@ -14,11 +14,11 @@ public class SceneLoad : MonoBehaviour
         {
             SceneManager.LoadScene("사냥터_지하수로");
         }
-        else if (b == 2 && Input.GetKeyDown(KeyCode.LeftShift))
+        else if (b == 2 && Input.GetKeyDown(KeyCode.LeftShift) && SystemMisstion.QuestNumber >= 10)
         {
             SceneManager.LoadScene("사냥터_폐선로");
         }
-        else if (b == 3 && Input.GetKeyDown(KeyCode.LeftShift))
+        else if (b == 3 && Input.GetKeyDown(KeyCode.LeftShift) && SystemMisstion.QuestNumber >= 20)
         {
             SceneManager.LoadScene("사냥터_경복궁 지하");
         }
@@ -44,7 +44,7 @@ public class SceneLoad : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("도성표지판"))
         {
-            Debug.Log("Ekgdma");
+            //Debug.Log("Ekgdma");
             b = 4;
         }
         else
