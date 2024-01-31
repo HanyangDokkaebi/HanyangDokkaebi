@@ -9,7 +9,7 @@ public class CurrentHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CurrentHp = HPBar.HP;
+        CurrentHp = LivingEntity.hp;
         GetComponent<TextMeshProUGUI>().text = CurrentHp.ToString();
     }
 }

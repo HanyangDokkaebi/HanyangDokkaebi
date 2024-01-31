@@ -16,7 +16,7 @@ public class CurrentManar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentManar = HPBar.Mana;
+        currentManar = LivingEntity.mana;
         GetComponent<TextMeshProUGUI>().text = currentManar.ToString();
     }
 }

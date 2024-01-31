@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class DialogOn : MonoBehaviour
 {
     public GameObject TextDialog;
+    public GameObject Store;
     int a = 0;
 
     // Update is called once per frame
@@ -28,7 +30,8 @@ public class DialogOn : MonoBehaviour
         else if (a == 4 && Input.GetKeyDown(KeyCode.LeftShift))
         {
             //Debug.Log("´­¸²");
-            TextDialog.SetActive(true);
+            //TextDialog.SetActive(true);
+            Store.SetActive(true);
         }
         else if (a == 5 && Input.GetKeyDown(KeyCode.LeftShift))
         {
