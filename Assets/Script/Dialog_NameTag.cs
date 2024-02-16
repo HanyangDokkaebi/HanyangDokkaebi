@@ -5,40 +5,42 @@ using UnityEngine;
 
 public class Dialog_NameTag : MonoBehaviour
 {
-    private string[] Missionlines =
+    private string[] NameStrings =
   {
         //0
-        "플레이어",
+        "이영신",
     
         //1
-        "플레이어",
+        "이영신",
 
         //2
-        "플레이어",
+        "이영신",
 
+        //퀘스트1 7개
         //3
-        "내부대신",
+        "이영신",
 
         //4
-        "플레이어",
+        "내부대신",
 
         //5
-        "내부대신",
+        "이영신",
 
         //6
-        "플레이어",
-
-        //7
         "내부대신",
 
+        //7
+        "이영신",
+
         //8
-        "플레이어",
+        "내부대신",
 
         //9
-        "플레이어",
+        "이영신",
 
+        //퀘스트2 11개
         //10
-        "대장장이",
+        "이영신",
 
         //11
         "플레이어"
@@ -54,6 +56,6 @@ public class Dialog_NameTag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMeshProUGUI>().text = Missionlines[Dialogue.index];
+        GetComponent<TextMeshProUGUI>().text = NameStrings[Dialogue.index];
     }
 }

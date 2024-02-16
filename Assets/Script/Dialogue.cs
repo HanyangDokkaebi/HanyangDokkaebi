@@ -144,6 +144,7 @@ public class Dialogue : MonoBehaviour
             for (int i = 0; i < 3; i++)
                 if (B_index[i] == index)
                 {  //대화집을 끝낼 타이밍이라면
+                    //PlayerMovement.speed = 15f;
                     a = 1;
                     break;
                 }
@@ -157,6 +158,7 @@ public class Dialogue : MonoBehaviour
     void StartDialogue()
     {
         s.Play();
+        //PlayerMovement.speed = 0f;
         StartCoroutine(TypeLine());
         
     }

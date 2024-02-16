@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Alpha1) && ItemManager.HPPotion != 0 && HPBar.HP != HPBar.MaxHp)
         {
             HPBar.HP += 10;

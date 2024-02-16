@@ -68,7 +68,7 @@ public class DialogOn : MonoBehaviour
         {
             a = 5;
         }
-        else
+        else if (collision.gameObject.CompareTag("초기화용"))
         {
             a = 0;
         }

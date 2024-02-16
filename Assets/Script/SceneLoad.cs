@@ -44,11 +44,12 @@ public class SceneLoad : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("도성표지판"))
         {
-            //Debug.Log("Ekgdma");
+            Debug.Log(b);
             b = 4;
         }
-        else
+        else if (collision.gameObject.CompareTag("초기화용"))
         {
+            Debug.Log(b);
             b = 0;
         }
     }
