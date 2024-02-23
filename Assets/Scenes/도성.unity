@@ -1647,6 +1647,7 @@ GameObject:
   - component: {fileID: 378637394}
   - component: {fileID: 378637393}
   - component: {fileID: 378637395}
+  - component: {fileID: 378637396}
   m_Layer: 3
   m_Name: Jump
   m_TagString: Ground
@@ -1830,7 +1831,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -16.992785, y: -0.42793697}
   m_SpriteTilingProperty:
@@ -1845,6 +1846,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.014431, y: 0.9973091}
   m_EdgeRadius: 0
+--- !u!251 &378637396
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378637391}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &400570507
 GameObject:
   m_ObjectHideFlags: 0
@@ -9334,6 +9354,7 @@ GameObject:
   - component: {fileID: 1706264000}
   - component: {fileID: 1706263999}
   - component: {fileID: 1706264001}
+  - component: {fileID: 1706264002}
   m_Layer: 3
   m_Name: Jump (1)
   m_TagString: Ground
@@ -9517,7 +9538,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -13.000713, y: 1.2931904}
   m_SpriteTilingProperty:
@@ -9532,6 +9553,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9928131, y: 0.9930189}
   m_EdgeRadius: 0
+--- !u!251 &1706264002
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706263997}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &1741062109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10035,6 +10075,7 @@ GameObject:
   - component: {fileID: 1842900180}
   - component: {fileID: 1842900179}
   - component: {fileID: 1842900181}
+  - component: {fileID: 1842900182}
   m_Layer: 3
   m_Name: Jump (3)
   m_TagString: Ground
@@ -10296,7 +10337,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -4.5, y: 2.1675138}
   m_SpriteTilingProperty:
@@ -10311,6 +10352,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9, y: 0.9153962}
   m_EdgeRadius: 0
+--- !u!251 &1842900182
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842900177}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1864696960
 GameObject:
   m_ObjectHideFlags: 0
