@@ -4936,6 +4936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inventory: {fileID: 642905292}
   CurrentQuest: {fileID: 1289858134}
+  Store: {fileID: 0}
 --- !u!1 &964879429
 GameObject:
   m_ObjectHideFlags: 0
@@ -5165,6 +5166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextDialog: {fileID: 1921197458}
+  Store: {fileID: 0}
 --- !u!114 &1029776514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7194,6 +7196,7 @@ GameObject:
   - component: {fileID: 1627798836}
   - component: {fileID: 1627798835}
   - component: {fileID: 1627798834}
+  - component: {fileID: 1627798844}
   m_Layer: 3
   m_Name: Jump
   m_TagString: Ground
@@ -8231,7 +8234,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 24.998219, y: 2.1693323}
   m_SpriteTilingProperty:
@@ -8276,7 +8279,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 10, y: 12.526621}
   m_SpriteTilingProperty:
@@ -8321,7 +8324,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 1.9931145, y: 12.526621}
   m_SpriteTilingProperty:
@@ -8366,7 +8369,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 24.996294, y: 12.526621}
   m_SpriteTilingProperty:
@@ -8411,7 +8414,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.5001687, y: 5.6344166}
   m_SpriteTilingProperty:
@@ -8456,7 +8459,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 18.499588, y: 0.4508297}
   m_SpriteTilingProperty:
@@ -8501,7 +8504,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -3.9996774, y: 0.4508297}
   m_SpriteTilingProperty:
@@ -8546,7 +8549,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 4.5003967, y: 3.8960354}
   m_SpriteTilingProperty:
@@ -8591,7 +8594,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -16.005795, y: 3.8960354}
   m_SpriteTilingProperty:
@@ -8636,7 +8639,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 1.498865, y: 2.1693323}
   m_SpriteTilingProperty:
@@ -8681,7 +8684,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 8.999004, y: 2.1693323}
   m_SpriteTilingProperty:
@@ -8726,7 +8729,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 14.004587, y: 2.1693323}
   m_SpriteTilingProperty:
@@ -8771,7 +8774,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 14.50042, y: 9.105581}
   m_SpriteTilingProperty:
@@ -8816,7 +8819,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 6.499826, y: 11.712071}
   m_SpriteTilingProperty:
@@ -8861,7 +8864,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 19.000175, y: 10.827797}
   m_SpriteTilingProperty:
@@ -8906,7 +8909,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -8.5011635, y: 11.712071}
   m_SpriteTilingProperty:
@@ -8951,7 +8954,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -3.5033514, y: 13.45634}
   m_SpriteTilingProperty:
@@ -8996,7 +8999,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -23.000263, y: 6.494532}
   m_SpriteTilingProperty:
@@ -9041,7 +9044,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -16.001331, y: 13.45634}
   m_SpriteTilingProperty:
@@ -9086,7 +9089,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -20.500202, y: 9.959351}
   m_SpriteTilingProperty:
@@ -9131,7 +9134,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -2.9993453, y: 6.494532}
   m_SpriteTilingProperty:
@@ -9176,7 +9179,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -8.998922, y: 5.634202}
   m_SpriteTilingProperty:
@@ -9191,6 +9194,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.996338, y: 0.99053144}
   m_EdgeRadius: 0
+--- !u!251 &1627798844
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627798817}
+  m_Enabled: 1
+  m_UseColliderMask: 0
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1659267720
 GameObject:
   m_ObjectHideFlags: 0
