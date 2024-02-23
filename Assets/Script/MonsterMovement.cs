@@ -9,7 +9,7 @@ public class MonsterMovement : MonsterController
 {
     //컴포넌트들
     private Rigidbody2D monsterRigidbody;
-    private Animator monsterAnimator;
+    //private Animator monsterAnimator;
     //몬스터 이동 세팅
     public float speed;
     private float moveDirection = -1;
@@ -21,11 +21,15 @@ public class MonsterMovement : MonsterController
     public float cooldown = 2.0f;
     //몬스터 상태
     private bool isAttacking = false;
-
+    public float initHp;
+    public float initAtk;
     private void Awake()
     {
         monsterRigidbody = GetComponent<Rigidbody2D>();
         monsterAnimator = GetComponent<Animator>();
+        maxHp = initHp;
+        hp = maxHp;
+        atk = initAtk;
     }
 
     void Update()
@@ -48,7 +52,7 @@ public class MonsterMovement : MonsterController
                     }
                 }
             }
-            if (!isAttacking)
+            if (!isAttacking && monsterAnimator.GetCurrentAnimatorStateInfo(0).IsName("3_Debuff_Stun 1") == false)
             {
                 Move();
             }
@@ -80,14 +84,7 @@ public class MonsterMovement : MonsterController
     //방향 전환
     private void FlipDirection()
     {
-        if (moveDirection > 0)
-        {
-            transform.localScale = new Vector3(-2, 2, 2); // 오른쪽 바라보기
-        }
-        else if (moveDirection < 0)
-        {
-            transform.localScale = new Vector3(2, 2, 2); // 왼쪽 바라보기
-        }
+        transform.localScale = new Vector3(-1 * transform.localScale.x, transform.localScale.y, transform.localScale.z); //방향 전환
     }
 
     private void Attack(Collider2D collider)

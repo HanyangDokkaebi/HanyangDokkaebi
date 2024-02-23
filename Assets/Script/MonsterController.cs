@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class MonsterController : LivingEntity
 {
-    /*private Animator monsterAnimator;
-    private MonsterMovement m_Movement;*/
+    protected Animator monsterAnimator;
+    //private MonsterMovement m_Movement;
     
     void Awake()
     {
-        /* monsterAnimator = GetComponent<Animator>();
-         m_Movement = GetComponent<MonsterMovement>();*/
-        maxHp = 50f;
-        atk = 5f;
+         monsterAnimator = GetComponent<Animator>();
+         //m_Movement = GetComponent<MonsterMovement>();
     }
 
     protected override void OnEnable()
@@ -23,6 +21,7 @@ public class MonsterController : LivingEntity
     public override void OnDamage(float damage)
     {
         base.OnDamage(damage);
+        monsterAnimator.SetTrigger("Damaged");
         Debug.Log("Monster HP: " + hp);
     }
 
