@@ -44,6 +44,15 @@ public class PlayerMovement : PlayerController {
 
     void Update()
     {
+        if (Dialogue.playerMove == 1)
+        {
+            speed = 0;
+        }
+        else if (Dialogue.playerMove == 0)
+        {
+            speed = 5f;
+        }
+
         if (isDead)
         {
             playerAnimator.SetBool("Die", true);

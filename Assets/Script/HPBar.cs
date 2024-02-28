@@ -18,8 +18,8 @@ public class HPBar : MonoBehaviour
 
     void Start()
     {
-        HPbar.value = (float)HP / (float)MaxHp;
-        ManaBar.value = (float)Mana / (float)MaxMana;
+        HPbar.value = (float)PlayerController.SThp / (float)PlayerController.STmaxHp;
+        ManaBar.value = (float)PlayerController.STmana / (float)PlayerController.STmaxMana;
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class HPBar : MonoBehaviour
     }
     private void HandleHp()
     {
-        HPbar.value = Mathf.Lerp(HPbar.value, (float)LivingEntity.hp / (float)LivingEntity.maxHp, Time.deltaTime * 10);
-        ManaBar.value = Mathf.Lerp(ManaBar.value, (float)LivingEntity.mana / (float)LivingEntity.maxMana, Time.deltaTime * 10);
+        HPbar.value = Mathf.Lerp(HPbar.value, (float)PlayerController.SThp / (float)PlayerController.STmaxHp, Time.deltaTime * 10);
+        ManaBar.value = Mathf.Lerp(ManaBar.value, (float)PlayerController.STmana / (float)PlayerController.STmaxMana, Time.deltaTime * 10);
     }
 }

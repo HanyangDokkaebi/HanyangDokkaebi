@@ -2346,7 +2346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62847c554dbde44418741b23e8677c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 100
   def: 0
+  maxMana: 100
+  mana: 100
   speed: 1
   pos: {fileID: 3248936846578329483}
   boxSize: {x: 0.5, y: 1}

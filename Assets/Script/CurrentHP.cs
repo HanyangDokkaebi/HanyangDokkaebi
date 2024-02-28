@@ -9,7 +9,7 @@ public class CurrentHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CurrentHp = LivingEntity.hp;
+        CurrentHp = PlayerController.SThp;
         GetComponent<TextMeshProUGUI>().text = CurrentHp.ToString();
     }
 }

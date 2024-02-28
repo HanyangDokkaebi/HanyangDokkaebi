@@ -332,7 +332,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6618741c4de6e1e4f96b53886e2b4fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 100
   def: 0
+  maxMana: 100
+  mana: 100
   speed: 5
   jumpForce: 15
   groundCheck: {fileID: 8879142936862558515}
@@ -360,7 +363,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12e76a7c234a1d74cb8f5fd1cb0c20a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 100
   def: 0
+  maxMana: 100
+  mana: 100
 --- !u!50 &8277255456299757035
 Rigidbody2D:
   serializedVersion: 4

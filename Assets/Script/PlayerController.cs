@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerController : LivingEntity
 {
+    public static float STmaxHp = 100f;
+    public static float SThp { get; protected set; }
+    public static float STmaxMana = 100f;
+    public static float STmana = 100f;
     void Awake()
     {
 
@@ -11,7 +15,10 @@ public class PlayerController : LivingEntity
 
     void Update()
     {
-        
+        STmaxHp = maxHp;
+        SThp = hp;
+        STmaxMana = maxMana;
+        STmana = mana;
     }
 
     protected override void OnEnable()
@@ -22,6 +29,8 @@ public class PlayerController : LivingEntity
     public override void OnDamage(float damage)
     {
         base.OnDamage(damage);
+        SThp = hp;
+        Debug.Log("Player STHP: " + SThp);
         Debug.Log("Player HP: " + hp);
     }
 
@@ -29,5 +38,10 @@ public class PlayerController : LivingEntity
     {
         base.Die();
         Debug.Log("Player Dead!");
+    }
+
+    public void hpUP()
+    {
+        hp += 10;
     }
 }

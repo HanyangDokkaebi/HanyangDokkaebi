@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -42,15 +43,36 @@ public class GameManager : MonoBehaviour
             Inventory.SetActive(true);
         }
     }
+
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
+
+    public void GameStart()
+    {
+        SceneManager.LoadScene("도성");
+    }
+
+    private PlayerController scriptInstance;
+    private void Start()
+    {
+        GameObject script1Object = GameObject.Find("Player"); // Script1을 가진 게임 오브젝트의 이름을 넣어주세요
+        scriptInstance = script1Object.GetComponent<PlayerController>();
+    }
+
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) && ItemManager.HPPotion != 0 && HPBar.HP != HPBar.MaxHp)
+        if (Input.GetKeyDown(KeyCode.Alpha1) && ItemManager.HPPotion != 0 && PlayerController.SThp != PlayerController.STmaxHp)
         {
-            HPBar.HP += 10;
+            if (scriptInstance != null)
+            {
+                scriptInstance.hpUP();
+            }
             ItemManager.HPPotion -= 1;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && ItemManager.ManaPotion != 0 && HPBar.Mana != HPBar.MaxMana)
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && ItemManager.ManaPotion != 0 && PlayerController.STmana!= PlayerController.STmaxMana)
         {
             HPBar.Mana += 10;
             ItemManager.ManaPotion -= 1;
