@@ -10,7 +10,7 @@ public class Arrow : MonoBehaviour
         if (collision.tag == "Monster")
         {
             Debug.Log("Arrow hit!");
-            collision.GetComponent<MonsterMovement>().OnDamage(LivingEntity.atk * 0.5f);
+            collision.GetComponent<MonsterMovement>().OnDamage(5f);
             Destroy(gameObject);
         }
     }

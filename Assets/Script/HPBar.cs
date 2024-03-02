@@ -29,7 +29,7 @@ public class HPBar : MonoBehaviour
     }
     private void HandleHp()
     {
-        HPbar.value = Mathf.Lerp(HPbar.value, (float)LivingEntity.hp / (float)LivingEntity.maxHp, Time.deltaTime * 10);
+        //HPbar.value = Mathf.Lerp(HPbar.value, (float)LivingEntity.hp / (float)LivingEntity.maxHp, Time.deltaTime * 10);
         ManaBar.value = Mathf.Lerp(ManaBar.value, (float)LivingEntity.mana / (float)LivingEntity.maxMana, Time.deltaTime * 10);
     }
 }
