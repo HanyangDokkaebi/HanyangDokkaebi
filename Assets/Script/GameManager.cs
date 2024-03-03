@@ -8,6 +8,17 @@ public class GameManager : MonoBehaviour
     public GameObject Inventory;
     public GameObject CurrentQuest;
     public GameObject Store;
+    public GameObject MenuSet;
+
+    public void MenuOff()
+    {
+        MenuSet.SetActive(false);
+    }
+    public void MenuOn()
+    {
+        MenuSet.SetActive(true);
+    }
+
     // Update is called once per frame
     public void StoreOff()
     {
